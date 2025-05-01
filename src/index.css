@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-100;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .heading {
+    @apply text-3xl md:text-4xl font-bold mb-8;
+  }
+}
+
+/* Light mode (default) */
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  
+  /* Brand Colors */
+  --brand-blue: #2563eb;
+  --brand-blue-light: #3b82f6;
+  --brand-blue-dark: #1d4ed8;
+  --brand-red: #dc2626;
+  --brand-red-light: #ef4444;
+  --brand-red-dark: #b91c1c;
+  --brand-cyan: #06b6d4;
+  --brand-cyan-light: #22d3ee;
+  --brand-cyan-dark: #0891b2;
+  
+  /* UI Colors */
+  --button-bg: var(--brand-cyan);
+  --button-hover: var(--brand-cyan-dark);
+  --button-text: #ffffff;
+  --border-color: #e5e7eb;
+  --accent-color: var(--brand-red);
+  --accent-hover: var(--brand-red-dark);
+  --nav-link-color: #ffffff;
+}
+
+/* Dark mode */
+.dark {
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  
+  /* Brand Colors (slightly adjusted for dark mode) */
+  --brand-blue: #3b82f6;
+  --brand-blue-light: #60a5fa;
+  --brand-blue-dark: #2563eb;
+  --brand-red: #ef4444;
+  --brand-red-light: #f87171;
+  --brand-red-dark: #dc2626;
+  --brand-cyan: #22d3ee;
+  --brand-cyan-light: #67e8f9;
+  --brand-cyan-dark: #06b6d4;
+  
+  /* UI Colors */
+  --button-bg: var(--brand-cyan);
+  --button-hover: var(--brand-cyan-light);
+  --button-text: #ffffff;
+  --border-color: #374151;
+  --accent-color: var(--brand-red);
+  --accent-hover: var(--brand-red-light);
+  --nav-link-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Text styles */
+/* h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+} */
+/* 
+p {
+  color: var(--text-secondary);
+} */
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+/* Brand text colors */
+.text-brand-blue {
+  color: var(--brand-blue);
+}
+
+.text-brand-red {
+  color: var(--brand-red);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--brand-cyan);
+  color: var(--button-text);
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-cyan-dark);
+}
+
+.btn-accent {
+  background-color: var(--brand-cyan);
+  color: var(--button-text);
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--brand-cyan-dark);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+/* Border styles */
+.border {
+  border-color: var(--border-color);
+}
+
+.border-brand-blue {
+  border-color: var(--brand-blue);
+}
+
+.border-brand-red {
+  border-color: var(--brand-red);
+}
+
+/* Link styles */
+a {
+  /* color: var(--brand-blue); */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--brand-blue-dark);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-brand {
+  border-color: var(--brand-blue);
+}
+
+/* Input styles */
+input, textarea, select {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+/* Accent elements */
+.accent-border {
+  border-left: 4px solid var(--brand-red);
+  padding-left: 1rem;
+}
+
+.highlight {
+  background-color: var(--brand-blue-light);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-brand {
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-red));
+}
+
+.bg-gradient-brand-reverse {
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-blue));
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--brand-blue);
+}
+
+.nav-link {
+  color: var(--nav-link-color);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-cyan-light);
+}
+
+
+/* .heroSectionTextContainer{
+  position: inherit !important;
+  z-index: 43432 !important;
+} */
