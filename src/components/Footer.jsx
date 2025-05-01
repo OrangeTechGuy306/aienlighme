@@ -17,10 +17,10 @@ const Footer = () => {
     <footer className="bg-blue-950 text-white pt-16 pb-8 px-5">
 
       <div className="container mx-auto px-4">
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+{/* grid grid-cols-1 md:grid-cols-4 */}
+        <div className="flex justify-around flex-wrap gap-8">
           {/* Company Info */}
-          <div>
+          <div className='md:w-[400px] w-[100%]'>
             <h3 className="text-xl font-bold mb-4">EnlightME Consultancy</h3>
             <p className="text-gray-400 mb-4">At EnlightME Edu Consults Ltd , we connect you to top-tier French institutions offering globally recognized programs taught 100% in English and French.</p>
             <div className="flex space-x-4">
@@ -79,11 +79,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Newsletter</h3>
             <p className="text-gray-400 mb-4">Subscribe to our newsletter to get the latest news and updates.</p>
-            <form className="flex gap-2">
+            <form className="flex gap-2 flex-wrap">
               <input
                 type="email"
                 placeholder={"Enter your email"}
-                className="px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900 w-[300px]"
+                className="px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-gray-900 md:w-[300px] w-[100%]"
               />
               <button
                 type="submit"
@@ -99,6 +99,7 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} EnlightME Edu. &copy; All Rights Reserved</p>
         </div>
       </div>
+
     </footer>
   );
 };
